@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guru Thiyanesh V | CSE Student & Web Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Guru Thiyanesh V - B.E. Computer Science & Engineering Student, Web Developer, and IoT Enthusiast located in Karur, Tamil Nadu.">
+  <meta name="keywords" content="Guru Thiyanesh V, Guru Thiyanesh, Portfolio, CSE Student, Web Development, IoT, Arduino, Hardware Troubleshooting, Karur">
+  <meta name="author" content="Guru Thiyanesh V">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Background Animated Particle Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="container nav-wrapper">
+      <a href="#hero" class="logo">
+        <span class="logo-badge">GTV</span> GURU THIYANESH V
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">
+          <i class="fas fa-sun"></i>
+        </button>
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Hire Me</a>
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle Navigation Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <span class="pulse-dot"></span> Available for Opportunities & Projects
+          </div>
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Guru Thiyanesh V</span>
+          </h1>
+          <div class="hero-subtitle">
+            I am a <span id="typing-text" class="typing-text"></span>
+          </div>
+          <p class="hero-description">
+            Motivated Computer Science and Engineering student with a strong foundation in web development, IoT, computer hardware, and system troubleshooting. Passionate about applying emerging technologies to solve real-world problems.
+          </p>
+          <div class="hero-btns">
+            <a href="#projects" class="btn btn-primary"><i class="fas fa-laptop-code"></i> Explore Projects</a>
+            <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contact Me</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3>B.E. CSE</h3>
+              <p>Undergraduate Degree</p>
+            </div>
+            <div class="stat-item">
+              <h3>IoT & Web</h3>
+              <p>Core Expertise</p>
+            </div>
+            <div class="stat-item">
+              <h3>Karur, TN</h3>
+              <p>Location</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="profile-card">
+            <div class="avatar-wrapper">
+              <img src="assets/profile.jpg" alt="Guru Thiyanesh V" class="avatar-photo">
+            </div>
+            <div class="profile-info">
+              <h3 class="profile-name">Guru Thiyanesh V</h3>
+              <p class="profile-role">Computer Science Student & Developer</p>
+              <div class="profile-tags">
+                <span class="tag"><i class="fas fa-code"></i> Web Dev</span>
+                <span class="tag"><i class="fas fa-microchip"></i> IoT & Hardware</span>
+                <span class="tag"><i class="fas fa-tools"></i> Troubleshooting</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+        <p class="section-subtitle">Career Objective, Background & Core Interests</p>
+
+        <div class="about-grid">
+          <!-- Photo & Objective Row -->
+          <div class="glass-card about-portrait-card">
+            <img src="assets/profile.jpg" alt="Guru Thiyanesh V" class="about-portrait-img">
+          </div>
+
+          <!-- Objective Card -->
+          <div class="glass-card objective-box" style="grid-column: auto;">
+            <h3><i class="fas fa-bullseye"></i> Career Objective</h3>
+            <p>
+              Motivated Computer Science and Engineering student with a strong foundation in web development, IoT, computer hardware, and troubleshooting. Seeking an opportunity in a reputed organization where I can apply my technical knowledge, learn emerging technologies, and contribute to organizational success while continuously enhancing my professional skills.
+            </p>
+          </div>
+
+          <!-- Personal Information Card -->
+          <div class="glass-card">
+            <h3><i class="fas fa-id-card"></i> Quick Info</h3>
+            <br>
+            <div class="about-info-item">
+              <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="info-content">
+                <h4>Location</h4>
+                <p>Karur, Tamil Nadu, India</p>
+              </div>
+            </div>
+
+            <div class="about-info-item">
+              <div class="info-icon"><i class="fas fa-language"></i></div>
+              <div class="info-content">
+                <h4>Languages Spoken</h4>
+                <p>English, Tamil</p>
+              </div>
+            </div>
+
+            <div class="about-info-item">
+              <div class="info-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div class="info-content">
+                <h4>Education Status</h4>
+                <p>B.E. CSE Student (Chettinad College)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Core Interests Card -->
+          <div class="glass-card">
+            <h3><i class="fas fa-heart"></i> Core Interests</h3>
+            <br>
+            <div class="profile-tags" style="justify-content: flex-start;">
+              <span class="tag" style="font-size:0.95rem; padding: 0.5rem 1rem;"><i class="fas fa-globe"></i> Web Development</span>
+              <span class="tag" style="font-size:0.95rem; padding: 0.5rem 1rem;"><i class="fas fa-microchip"></i> Internet of Things (IoT)</span>
+              <span class="tag" style="font-size:0.95rem; padding: 0.5rem 1rem;"><i class="fas fa-robot"></i> Artificial Intelligence</span>
+              <span class="tag" style="font-size:0.95rem; padding: 0.5rem 1rem;"><i class="fab fa-github"></i> Open Source Technologies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">Experience & <span class="gradient-text">Education</span></h2>
+        <p class="section-subtitle">My Academic Journey & Work History</p>
+
+        <div class="experience-education-grid">
+          <!-- Work Experience Column -->
+          <div>
+            <h3 class="column-title"><i class="fas fa-briefcase"></i> Work & Internship Experience</h3>
+            <div class="timeline">
+
+              <!-- Internship Item -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">INTERNSHIP</div>
+                <h4 class="timeline-title">Software Development Intern</h4>
+                <div class="timeline-org">ObjectWays</div>
+                <ul class="timeline-bullets">
+                  <li>Participated in software development activities and team agile workflows.</li>
+                  <li>Learned modern web technologies and hands-on web debugging techniques.</li>
+                  <li>Worked collaboratively on assigned software development tasks.</li>
+                </ul>
+              </div>
+
+              <!-- Lab Assistant Work Experience -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">WORK EXPERIENCE</div>
+                <h4 class="timeline-title">Lab Assistant</h4>
+                <div class="timeline-org">The Karur Polytechnic College</div>
+                <ul class="timeline-bullets">
+                  <li>Assisted students during computer laboratory practical sessions.</li>
+                  <li>Maintained computer systems, networking, and peripheral equipment.</li>
+                  <li>Installed required software packages and performed hardware troubleshooting.</li>
+                  <li>Supported computer department faculty with lab management and operations.</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Education Column -->
+          <div>
+            <h3 class="column-title"><i class="fas fa-graduation-cap"></i> Academic Qualifications</h3>
+            <div class="timeline">
+
+              <!-- B.E. Degree -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2025 – PRESENT</div>
+                <h4 class="timeline-title">B.E. Computer Science & Engineering</h4>
+                <div class="timeline-org">Chettinad College of Engineering and Technology</div>
+                <ul class="timeline-bullets">
+                  <li>Pursuing undergraduate degree in Computer Science and Engineering.</li>
+                  <li>Focusing on advanced algorithms, web development, software engineering, and IoT systems.</li>
+                </ul>
+              </div>
+
+              <!-- Diploma -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2020 – 2023</div>
+                <h4 class="timeline-title">Diploma in Computer Engineering</h4>
+                <div class="timeline-org">The Karur Polytechnic College</div>
+                <ul class="timeline-bullets">
+                  <li>Completed 3-year Diploma with practical specialization in computer systems, programming, and hardware maintenance.</li>
+                </ul>
+              </div>
+
+              <!-- SSLC -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">SECONDARY SCHOOL</div>
+                <h4 class="timeline-title">SSLC (Class X)</h4>
+                <div class="timeline-org">Municipal Boys Higher Secondary School</div>
+                <ul class="timeline-bullets">
+                  <li>Completed secondary school education with strong fundamental science and math background.</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Academic & Technical <span class="gradient-text">Projects</span></h2>
+        <p class="section-subtitle">Real-World Hardware, IoT & Web Applications</p>
+
+        <div class="glass-card project-card">
+          <div class="project-grid-main">
+            <div>
+              <span class="project-badge"><i class="fas fa-microchip"></i> Featured Academic Project</span>
+              <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">
+                Air Pollution & Noise Pollution Detection System
+              </h3>
+              <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Developed an IoT-based environmental monitoring system using sensors to detect and measure air quality levels and ambient noise pollution in real time. Designed to assist urban planning and environmental safety monitoring.
+              </p>
+              <ul class="timeline-bullets" style="margin-bottom: 1rem;">
+                <li>Engineered real-time air quality index (AQI) and sound decibel (dB) tracking.</li>
+                <li>Programmed microcontrollers using Embedded C for data sampling.</li>
+                <li>Interfaced gas, particulate, and acoustic sensors for continuous telemetry.</li>
+              </ul>
+
+              <div class="project-tech-stack">
+                <span class="tech-chip">Arduino</span>
+                <span class="tech-chip">IoT Sensors</span>
+                <span class="tech-chip">Embedded C</span>
+                <span class="tech-chip">Environmental Telemetry</span>
+              </div>
+            </div>
+
+            <!-- Interactive IoT Live Dashboard Simulation Widget -->
+            <div class="iot-dashboard-widget">
+              <div class="iot-header">
+                <h4 style="font-size: 0.95rem; color: var(--text-primary);"><i class="fas fa-satellite-dish"></i> Sensor Live Monitor (Simulator)</h4>
+                <span class="sensor-status-pill"><span class="pulse-dot"></span> LIVE SENSORS ONLINE</span>
+              </div>
+
+              <div class="sensor-grid">
+                <div class="sensor-box">
+                  <div class="sensor-label"><i class="fas fa-wind"></i> Air Quality Index (AQI)</div>
+                  <div class="sensor-value" id="aqi-value">42</div>
+                  <div class="sensor-unit">PPM / Good Air</div>
+                  <div class="sensor-indicator-bar">
+                    <div id="aqi-bar" class="sensor-bar-fill" style="width: 25%;"></div>
+                  </div>
+                </div>
+
+                <div class="sensor-box">
+                  <div class="sensor-label"><i class="fas fa-volume-high"></i> Noise Level</div>
+                  <div class="sensor-value" id="noise-value">58</div>
+                  <div class="sensor-unit">Decibels (dB)</div>
+                  <div class="sensor-indicator-bar">
+                    <div id="noise-bar" class="sensor-bar-fill" style="width: 48%; background: var(--accent-indigo);"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="iot-controls">
+                <button id="simulate-sensor-btn" class="btn btn-secondary btn-sm"><i class="fas fa-play"></i> Live Sensor Stream</button>
+                <button id="reset-sensor-btn" class="btn btn-secondary btn-sm"><i class="fas fa-rotate-left"></i> Reset Baseline</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Technical & Soft <span class="gradient-text">Skills</span></h2>
+        <p class="section-subtitle">Programming, Web Technologies, Tools & Soft Skills</p>
+
+        <div class="skills-categories">
+          <!-- Programming Languages -->
+          <div class="glass-card skill-category-card">
+            <h3><i class="fas fa-code"></i> Programming</h3>
+            <div class="skill-tags">
+              <span class="skill-badge"><i class="fab fa-c"></i> C</span>
+              <span class="skill-badge"><i class="fas fa-terminal"></i> C++</span>
+              <span class="skill-badge"><i class="fab fa-python"></i> Python</span>
+              <span class="skill-badge"><i class="fab fa-js"></i> JavaScript</span>
+            </div>
+          </div>
+
+          <!-- Web Development -->
+          <div class="glass-card skill-category-card">
+            <h3><i class="fas fa-globe"></i> Web Technologies</h3>
+            <div class="skill-tags">
+              <span class="skill-badge"><i class="fab fa-html5"></i> HTML5</span>
+              <span class="skill-badge"><i class="fab fa-css3-alt"></i> CSS3</span>
+              <span class="skill-badge"><i class="fab fa-js-square"></i> JavaScript (ES6+)</span>
+              <span class="skill-badge"><i class="fab fa-node-js"></i> Node.js (Basic)</span>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="glass-card skill-category-card">
+            <h3><i class="fas fa-database"></i> Databases</h3>
+            <div class="skill-tags">
+              <span class="skill-badge"><i class="fas fa-server"></i> MySQL</span>
+              <span class="skill-badge"><i class="fas fa-leaf"></i> MongoDB (Basic)</span>
+            </div>
+          </div>
+
+          <!-- Development Tools -->
+          <div class="glass-card skill-category-card">
+            <h3><i class="fas fa-wrench"></i> Developer Tools</h3>
+            <div class="skill-tags">
+              <span class="skill-badge"><i class="fas fa-code-branch"></i> Git</span>
+              <span class="skill-badge"><i class="fas fa-laptop-code"></i> VS Code</span>
+              <span class="skill-badge"><i class="fas fa-cubes"></i> XAMPP</span>
+              <span class="skill-badge"><i class="fas fa-file-word"></i> MS Office</span>
+            </div>
+          </div>
+
+          <!-- Hardware & Troubleshooting -->
+          <div class="glass-card skill-category-card">
+            <h3><i class="fas fa-microchip"></i> Hardware & Systems</h3>
+            <div class="skill-tags">
+              <span class="skill-badge"><i class="fas fa-tools"></i> Computer Troubleshooting</span>
+              <span class="skill-badge"><i class="fas fa-desktop"></i> OS Installation</span>
+              <span class="skill-badge"><i class="fas fa-network-wired"></i> System Maintenance</span>
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="glass-card skill-category-card">
+            <h3><i class="fas fa-brain"></i> Soft Skills</h3>
+            <div class="skill-tags">
+              <span class="skill-badge"><i class="fas fa-puzzle-piece"></i> Problem Solving</span>
+              <span class="skill-badge"><i class="fas fa-comments"></i> Communication</span>
+              <span class="skill-badge"><i class="fas fa-users"></i> Teamwork</span>
+              <span class="skill-badge"><i class="fas fa-user-shield"></i> Leadership</span>
+              <span class="skill-badge"><i class="fas fa-clock"></i> Time Management</span>
+              <span class="skill-badge"><i class="fas fa-bolt"></i> Quick Learning</span>
+              <span class="skill-badge"><i class="fas fa-chart-line"></i> Analytical Thinking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+        <p class="section-subtitle">Let's Connect for Opportunities, Projects & Collaboration</p>
+
+        <div class="contact-grid">
+          <!-- Contact Cards -->
+          <div>
+            <!-- Email -->
+            <a href="mailto:guru2005savi@gmail.com" class="contact-card-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-details">
+                <h4>Email Address</h4>
+                <p>guru2005savi@gmail.com</p>
+              </div>
+              <button class="copy-btn" data-copy="guru2005savi@gmail.com" title="Copy Email">
+                <i class="fas fa-copy"></i>
+              </button>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:+917448577857" class="contact-card-item">
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              <div class="contact-details">
+                <h4>Phone Number</h4>
+                <p>+91 7448577857</p>
+              </div>
+              <button class="copy-btn" data-copy="+917448577857" title="Copy Phone Number">
+                <i class="fas fa-copy"></i>
+              </button>
+            </a>
+
+            <!-- Location -->
+            <div class="contact-card-item">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="contact-details">
+                <h4>Location</h4>
+                <p>Karur, Tamil Nadu, India</p>
+              </div>
+            </div>
+
+            <!-- Social Media Placeholder Links -->
+            <div class="glass-card" style="margin-top: 1.5rem;">
+              <h4 style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">Social Profiles</h4>
+              <div class="social-links">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn Profile">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub Profile">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="glass-card">
+            <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-paper-plane"></i> Send Me a Message</h3>
+            <form id="contact-form" class="contact-form" action="mailto:guru2005savi@gmail.com" method="post" enctype="text/plain">
+              <div class="form-group">
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" name="Name" class="form-control" placeholder="Enter your full name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">Your Email</label>
+                <input type="email" id="contact-email" name="Email" class="form-control" placeholder="Enter your email address" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Your Message</label>
+                <textarea id="contact-message" name="Message" class="form-control" placeholder="Write your message or project inquiry here..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message to guru2005savi@gmail.com</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Guru Thiyanesh V. All Rights Reserved.</p>
+      <div class="social-links">
+        <a href="mailto:guru2005savi@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="#hero" class="social-icon" title="Back to Top"><i class="fas fa-arrow-up"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
