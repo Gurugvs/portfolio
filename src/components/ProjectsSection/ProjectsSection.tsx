@@ -21,33 +21,6 @@ export const ProjectsSection = () => {
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200",
       gridClass: "md:col-span-5 h-[420px]",
     },
-    {
-      id: 3,
-      title: "Interactive Web & JavaScript Applications",
-      subtitle: "Responsive web interfaces, dynamic DOM workflows, and modern UI engineering with Node.js",
-      tags: ["JavaScript", "HTML5/CSS3", "Vite & React"],
-      link: "https://github.com/Gurugvs",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200",
-      gridClass: "md:col-span-4 h-[380px]",
-    },
-    {
-      id: 4,
-      title: "Database Management & Backend Integration",
-      subtitle: "Relational modeling, data persistence, and CRUD systems built on MySQL and MongoDB",
-      tags: ["MongoDB", "MySQL", "REST APIs"],
-      link: "https://github.com/Gurugvs",
-      image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&q=80&w=1200",
-      gridClass: "md:col-span-4 h-[380px]",
-    },
-    {
-      id: 5,
-      title: "Computer Hardware & Lab Diagnostics",
-      subtitle: "Comprehensive PC hardware maintenance, OS deployment, BIOS configuration, and system troubleshooting",
-      tags: ["Hardware Labs", "OS Setup", "Diagnostics"],
-      link: "https://github.com/Gurugvs",
-      image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=1200",
-      gridClass: "md:col-span-4 h-[380px]",
-    },
   ];
 
   return (
@@ -63,7 +36,7 @@ export const ProjectsSection = () => {
           Selected <span className="text-gradient-primary">Projects</span>
         </h2>
         <p className="text-muted-foreground text-center md:text-left max-w-2xl text-lg">
-          Featured academic and technical projects spanning Full-Stack MERN engineering, IoT sensor networks, web applications, and systems hardware.
+          Featured academic and technical projects spanning Full-Stack MERN engineering and IoT sensor networks.
         </p>
       </motion.div>
 
