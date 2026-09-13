@@ -156,11 +156,10 @@ export function SmoothCursor({
       const isInteractive = Boolean(interactiveTarget);
 
       setIsHoveringInteractive(isInteractive);
-
       if (isInteractive) {
-        document.body.style.cursor = "pointer";
+        scale.set(1.15);
       } else {
-        document.body.style.cursor = "none";
+        scale.set(1);
       }
 
       const magneticTarget = findMagneticElement(currentPos.x, currentPos.y);
@@ -194,6 +193,7 @@ export function SmoothCursor({
 
     const handleMouseEnter = () => {
       setIsVisible(true);
+      document.body.style.cursor = "none";
       onCursorEnter?.();
     };
 
@@ -207,13 +207,13 @@ export function SmoothCursor({
 
     const handleMouseDown = () => {
       if (scaleOnClick) {
-        scale.set(0.75);
+        scale.set(0.8);
       }
     };
 
     const handleMouseUp = () => {
       if (scaleOnClick) {
-        scale.set(1);
+        scale.set(isHoveringInteractive ? 1.15 : 1);
       }
     };
 
@@ -261,12 +261,11 @@ export function SmoothCursor({
     isHoveringInteractive,
   ]);
 
-  if (disabled || !isVisible || isHoveringInteractive) return null;
+  if (disabled || !isVisible) return null;
 
   return (
     <>
       {showTrail &&
-        !isHoveringInteractive &&
         trail.map((pos, index) => (
           <motion.div
             key={index}
@@ -276,7 +275,7 @@ export function SmoothCursor({
               top: pos.y,
               translateX: "-50%",
               translateY: "-50%",
-              zIndex: 9998 - index,
+              zIndex: 2147483646 - index,
               pointerEvents: "none",
               opacity: ((trailLength - index) / trailLength) * 0.4,
               scale: ((trailLength - index) / trailLength) * 0.7,
@@ -294,7 +293,7 @@ export function SmoothCursor({
           translateY: "-3px",
           rotate: rotateOnMove ? rotation : 0,
           scale: scale,
-          zIndex: 9999,
+          zIndex: 2147483647,
           pointerEvents: "none",
           willChange: "transform",
           filter: glowEffect ? "drop-shadow(0 0 10px rgba(139, 92, 246, 0.5))" : "none",
