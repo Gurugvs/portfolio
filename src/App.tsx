@@ -14,7 +14,6 @@ import { Home, User, GraduationCap, Briefcase, FolderKanban, Send } from "lucide
 import { motion, AnimatePresence } from "framer-motion";
 
 import Dock from "./components/lightswind/dock";
-import { SmoothCursor } from "./components/lightswind/smooth-cursor";
 
 function App() {
   const [showDock, setShowDock] = useState(false);
@@ -57,7 +56,6 @@ function App() {
 
   return (
     <div className="bg-transparent min-h-screen relative overflow-x-hidden selection:bg-primary/30 selection:text-primary-foreground">
-      <SmoothCursor glowEffect />
       <ReactLenis root options={{ smoothWheel: true, duration: 1.2 }}>
         <Header />
 
