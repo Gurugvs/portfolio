@@ -2,27 +2,34 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useSpring } from "framer-motion";
 import { cn } from "../lib/utils";
 
-const DefaultCursorSVG = ({ size = 25, color = "currentColor", className }: { size?: number; color?: string; className?: string }) => {
+const DefaultCursorSVG = ({ size = 24, className }: { size?: number; color?: string; className?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={size * 2}
-      height={size * 2.16}
-      viewBox="0 0 50 54"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
       fill="none"
-      className={cn("pointer-events-none drop-shadow-md", className)}
+      className={cn("pointer-events-none drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)]", className)}
     >
-      <g filter="url(#filter0_d_91_7928)">
-        <path
-          d="M42.6817 41.1495L27.5103 6.79925C26.7269 5.02557 24.2082 5.02558 23.3927 6.79925L7.59814 41.1495C6.75833 42.9759 8.52712 44.8902 10.4125 44.1954L24.3757 39.0496C24.8829 38.8627 25.4385 38.8627 25.9422 39.0496L39.8121 44.1954C41.6849 44.8902 43.4884 42.9759 42.6817 41.1495Z"
-          fill={color}
-        />
-        <path
-          d="M43.7146 40.6933L28.5431 6.34306C27.3556 3.65428 23.5772 3.69516 22.3668 6.32755L6.57226 40.6778C5.3134 43.4156 7.97238 46.298 10.803 45.2549L24.7662 40.109C25.0221 40.0147 25.2999 40.0156 25.5494 40.1082L39.4193 45.254C42.2261 46.2953 44.9254 43.4347 43.7146 40.6933Z"
-          stroke="currentColor"
-          strokeWidth={1.5}
-        />
-      </g>
+      <path
+        d="M3 3L10.5 21L14 14L21 10.5L3 3Z"
+        fill="#0f172a"
+        stroke="#ffffff"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+      />
+      <path
+        d="M5.5 5.8L10.2 17.5L12.7 12.7L17.5 10.2L5.5 5.8Z"
+        fill="url(#sleekCursorGrad)"
+      />
+      <defs>
+        <linearGradient id="sleekCursorGrad" x1="5.5" y1="5.8" x2="17.5" y2="17.5" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#8B5CF6" />
+          <stop offset="1" stopColor="#3B82F6" />
+        </linearGradient>
+      </defs>
     </svg>
   );
 };
@@ -55,20 +62,20 @@ export interface SmoothCursorProps {
 export function SmoothCursor({
   cursor,
   springConfig = {
-    damping: 35,
-    stiffness: 350,
-    mass: 0.8,
+    damping: 32,
+    stiffness: 380,
+    mass: 0.6,
     restDelta: 0.001,
   },
   className,
-  size = 22,
+  size = 24,
   color = "currentColor",
   hideOnLeave = true,
-  trailLength = 5,
+  trailLength = 4,
   showTrail = false,
-  rotateOnMove = true,
+  rotateOnMove = false,
   scaleOnClick = true,
-  glowEffect = false,
+  glowEffect = true,
   magneticDistance = 50,
   magneticElements = "a, button, [role='button'], input, textarea, select, .cursor-pointer, [data-magnetic]",
   onCursorMove,
@@ -283,8 +290,8 @@ export function SmoothCursor({
           position: "fixed",
           left: cursorX,
           top: cursorY,
-          translateX: "-50%",
-          translateY: "-50%",
+          translateX: "-3px",
+          translateY: "-3px",
           rotate: rotateOnMove ? rotation : 0,
           scale: scale,
           zIndex: 9999,
