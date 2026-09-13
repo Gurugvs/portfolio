@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Play, Radio } from "lucide-react";
+import { IoTPollutionDemoModal } from "../IoTPollutionDemo/IoTPollutionDemoModal";
 
 export const ProjectsSection = () => {
+  const [isIotDemoOpen, setIsIotDemoOpen] = useState(false);
+
   const projects = [
     {
       id: 1,
@@ -11,15 +15,17 @@ export const ProjectsSection = () => {
       link: "https://github.com/Gurugvs/rentalhub",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200",
       gridClass: "md:col-span-7 h-[420px]",
+      hasLiveDemo: false,
     },
     {
       id: 2,
       title: "Air & Noise Pollution Detection using IoT",
       subtitle: "Academic Project: Real-time environmental monitoring using Arduino, smart sensors & Embedded C",
-      tags: ["Arduino", "IoT Sensors", "Embedded C"],
+      tags: ["Arduino", "IoT Sensors", "Embedded C", "Live Simulator"],
       link: "https://github.com/Gurugvs",
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200",
       gridClass: "md:col-span-5 h-[420px]",
+      hasLiveDemo: true,
     },
   ];
 
@@ -43,16 +49,20 @@ export const ProjectsSection = () => {
       {/* 12-Column Full-Width Bento Grid */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 w-full">
         {projects.map((project, i) => (
-          <motion.a
+          <motion.div
             key={project.id}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`group relative overflow-hidden rounded-[2.25rem] block shadow-xl border border-foreground/10 ${project.gridClass}`}
+            className={`group relative overflow-hidden rounded-[2.25rem] block shadow-xl border border-foreground/10 cursor-pointer ${project.gridClass}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1, duration: 0.6 }}
             viewport={{ once: true, amount: 0.1 }}
+            onClick={() => {
+              if (project.hasLiveDemo) {
+                setIsIotDemoOpen(true);
+              } else {
+                window.open(project.link, "_blank", "noopener,noreferrer");
+              }
+            }}
           >
             {/* Background Image Container */}
             <div className="absolute inset-0 bg-neutral-950">
@@ -70,14 +80,19 @@ export const ProjectsSection = () => {
             {/* Content Overlay */}
             <div className="absolute inset-0 p-8 flex flex-col justify-end pointer-events-none">
               <div className="flex items-end justify-between gap-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300 transform-gpu">
-                <div className="z-10 max-w-lg">
+                <div className="z-10 max-w-lg pointer-events-auto">
                   {project.tags && (
-                    <div className="flex flex-wrap gap-1.5 mb-2.5">
+                    <div className="flex flex-wrap items-center gap-1.5 mb-2.5">
                       {project.tags.map((t, idx) => (
                         <span
                           key={idx}
-                          className="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-white border border-white/20"
+                          className={`text-[10px] font-semibold px-2.5 py-0.5 rounded-full backdrop-blur-md border ${
+                            t === "Live Simulator"
+                              ? "bg-emerald-500/30 text-emerald-300 border-emerald-400/40 flex items-center gap-1 animate-pulse"
+                              : "bg-white/20 text-white border-white/20"
+                          }`}
                         >
+                          {t === "Live Simulator" && <Radio className="w-2.5 h-2.5" />}
                           {t}
                         </span>
                       ))}
@@ -91,15 +106,37 @@ export const ProjectsSection = () => {
                   </p>
                 </div>
                 
-                {/* Arrow Action Icon */}
-                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shrink-0 opacity-80 group-hover:opacity-100 group-hover:bg-white group-hover:text-black transition-all duration-300 rotate-45 group-hover:rotate-0 z-10 shadow-lg">
-                  <ArrowUpRight className="w-6 h-6 text-white group-hover:text-black transition-colors" />
+                {/* Action Buttons */}
+                <div className="flex items-center gap-2 pointer-events-auto shrink-0">
+                  {project.hasLiveDemo ? (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsIotDemoOpen(true);
+                      }}
+                      className="px-4 py-2.5 rounded-full bg-primary hover:bg-primary/90 text-white text-xs sm:text-sm font-bold flex items-center gap-2 shadow-lg shadow-primary/30 transition-all hover:scale-105 active:scale-95"
+                    >
+                      <Play className="w-4 h-4 fill-white" />
+                      <span>Live Demo</span>
+                    </button>
+                  ) : (
+                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shrink-0 opacity-80 group-hover:opacity-100 group-hover:bg-white group-hover:text-black transition-all duration-300 rotate-45 group-hover:rotate-0 z-10 shadow-lg">
+                      <ArrowUpRight className="w-6 h-6 text-white group-hover:text-black transition-colors" />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
-          </motion.a>
+          </motion.div>
         ))}
       </div>
+
+      {/* IoT Air & Noise Pollution Telemetry Live Simulator Modal */}
+      <IoTPollutionDemoModal
+        isOpen={isIotDemoOpen}
+        onClose={() => setIsIotDemoOpen(false)}
+      />
     </section>
   );
 };
+
