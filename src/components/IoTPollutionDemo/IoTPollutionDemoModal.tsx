@@ -307,14 +307,14 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
           } bg-neutral-950/95 border border-white/15 text-foreground shadow-2xl overflow-hidden flex flex-col`}
         >
           {/* Top Status Header */}
-          <div className="px-6 py-4 border-b border-white/10 bg-neutral-900/60 flex flex-wrap items-center justify-between gap-4">
+          <div className="px-4 py-2.5 border-b border-white/10 bg-neutral-900/60 flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-blue-600 flex items-center justify-center text-white shadow-lg shadow-primary/20">
-                <Radio className="w-5 h-5 animate-pulse" />
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-blue-600 flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                <Radio className="w-4 h-4 animate-pulse" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-2">
+                  <h3 className="text-sm font-bold text-white tracking-tight flex items-center gap-2">
                     Air & Noise Pollution IoT Telemetry Live Simulator
                   </h3>
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
@@ -322,59 +322,59 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                     ONLINE (115200 Baud)
                   </span>
                 </div>
-                <p className="text-xs text-muted-foreground">
-                  Target Hardware: Arduino Uno R3 • ESP8266 Wi-Fi • MQ-135 Gas • MQ-7 CO • KY-037 Sound • DHT11
+                <p className="text-[11px] text-muted-foreground truncate max-w-xs sm:max-w-none">
+                  Arduino Uno R3 • ESP8266 • MQ-135 • MQ-7 • KY-037 • DHT11
                 </p>
               </div>
             </div>
 
             {/* Actions & Preset Bar */}
-            <div className="flex items-center gap-2 ml-auto">
+            <div className="flex items-center gap-1.5 ml-auto">
               <button
                 onClick={() => setSoundAlertEnabled(!soundAlertEnabled)}
-                className={`p-2 rounded-xl border text-xs font-medium flex items-center gap-1.5 transition-all ${
+                className={`p-1.5 rounded-lg border text-xs font-medium flex items-center gap-1.5 transition-all ${
                   soundAlertEnabled
                     ? "bg-amber-500/20 text-amber-300 border-amber-500/40"
                     : "bg-white/5 text-neutral-400 border-white/10 hover:bg-white/10"
                 }`}
                 title="Toggle Web Audio Alarm Buzzer"
               >
-                {soundAlertEnabled ? <Volume2 className="w-4 h-4 text-amber-400" /> : <VolumeX className="w-4 h-4" />}
+                {soundAlertEnabled ? <Volume2 className="w-3.5 h-3.5 text-amber-400" /> : <VolumeX className="w-3.5 h-3.5" />}
                 <span className="hidden sm:inline">{soundAlertEnabled ? "Alarm Sound ON" : "Alarm Muted"}</span>
               </button>
 
               <button
                 onClick={() => setIsLiveStream(!isLiveStream)}
-                className={`p-2 rounded-xl border text-xs font-medium flex items-center gap-1.5 transition-all ${
+                className={`p-1.5 rounded-lg border text-xs font-medium flex items-center gap-1.5 transition-all ${
                   isLiveStream
                     ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40"
                     : "bg-neutral-800 text-neutral-400 border-white/10"
                 }`}
               >
-                {isLiveStream ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+                {isLiveStream ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
                 <span className="hidden sm:inline">{isLiveStream ? "Streaming" : "Paused"}</span>
               </button>
 
               <button
                 onClick={() => setIsFullscreen(!isFullscreen)}
-                className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-300 border border-white/10 transition-colors"
+                className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-neutral-300 border border-white/10 transition-colors"
                 title="Toggle Fullscreen"
               >
-                {isFullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
+                {isFullscreen ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
               </button>
 
               <button
                 onClick={onClose}
-                className="p-2 rounded-xl bg-white/10 hover:bg-red-500/20 hover:text-red-400 text-neutral-300 border border-white/10 transition-colors"
+                className="p-1.5 rounded-lg bg-white/10 hover:bg-red-500/20 hover:text-red-400 text-neutral-300 border border-white/10 transition-colors"
                 title="Close Demo"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
             </div>
           </div>
 
           {/* Preset Environment Selector Bar */}
-          <div className="px-6 py-2.5 bg-neutral-900/40 border-b border-white/5 flex flex-wrap items-center justify-between gap-3 text-xs">
+          <div className="px-4 py-1.5 bg-neutral-900/40 border-b border-white/5 flex flex-wrap items-center justify-between gap-2 text-xs">
             <div className="flex items-center gap-2 text-neutral-400">
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="font-medium">Simulation Presets:</span>
@@ -389,7 +389,7 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                 <button
                   key={p.id}
                   onClick={() => handlePresetSelect(p.id as EnvironmentPreset)}
-                  className={`px-3 py-1.5 rounded-lg border font-medium transition-all ${
+                  className={`px-2.5 py-1 rounded-md border font-medium transition-all ${
                     currentPreset === p.id
                       ? "bg-primary text-white border-primary shadow-md shadow-primary/25"
                       : "bg-white/5 text-neutral-300 border-white/10 hover:bg-white/10"
@@ -402,7 +402,7 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
           </div>
 
           {/* Navigation Tabs */}
-          <div className="flex border-b border-white/10 bg-neutral-950 px-6 gap-2 pt-2">
+          <div className="flex border-b border-white/10 bg-neutral-950 px-4 gap-1 pt-1.5">
             {[
               { id: "dashboard", label: "Live Telemetry Dashboard", icon: Activity },
               { id: "controls", label: "Interactive Hardware Sliders", icon: Sliders },
@@ -415,13 +415,13 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as typeof activeTab)}
-                  className={`px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-t-xl transition-all flex items-center gap-2 border-t-2 ${
+                  className={`px-3 py-2 text-xs font-semibold rounded-t-lg transition-all flex items-center gap-1.5 border-t-2 ${
                     isActive
                       ? "border-primary bg-neutral-900/90 text-white shadow-sm"
                       : "border-transparent text-neutral-400 hover:text-neutral-200 hover:bg-white/5"
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? "text-primary" : ""}`} />
+                  <Icon className={`w-3.5 h-3.5 ${isActive ? "text-primary" : ""}`} />
                   {tab.label}
                 </button>
               );
@@ -429,19 +429,19 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
           </div>
 
           {/* Modal Main Content Body */}
-          <div className="p-6 overflow-y-auto flex-1 space-y-6">
+          <div className="p-4 overflow-y-auto flex-1 space-y-4">
             {/* TAB 1: LIVE DASHBOARD */}
             {activeTab === "dashboard" && (
-              <div className="space-y-6">
+              <div className="space-y-3">
                 {/* Alarm Banner if Triggered */}
                 {isAlarmTriggered && (
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="p-4 rounded-2xl bg-red-950/60 border border-red-500/50 text-red-200 flex items-center justify-between gap-4 shadow-lg shadow-red-900/20"
+                    className="p-3 rounded-xl bg-red-950/60 border border-red-500/50 text-red-200 flex items-center justify-between gap-3 shadow-lg shadow-red-900/20"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-red-500 flex items-center justify-center text-white animate-bounce shrink-0">
+                      <div className="w-8 h-8 rounded-lg bg-red-500 flex items-center justify-center text-white animate-bounce shrink-0">
                         <Bell className="w-5 h-5" />
                       </div>
                       <div>
@@ -462,17 +462,17 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                 )}
 
                 {/* Top Metrics Row: AQI Gauge + Decibel Audio Meter */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
                   {/* AQI Master Card (7 Cols) */}
-                  <div className="lg:col-span-6 bg-neutral-900/60 border border-white/10 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
-                    <div className="flex items-center justify-between mb-4">
+                  <div className="lg:col-span-6 bg-neutral-900/60 border border-white/10 rounded-xl p-4 flex flex-col justify-between relative overflow-hidden">
+                    <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2.5">
-                        <div className="p-2 rounded-xl bg-primary/20 text-primary border border-primary/30">
-                          <Wind className="w-5 h-5" />
+                        <div className="p-1.5 rounded-lg bg-primary/20 text-primary border border-primary/30">
+                          <Wind className="w-4 h-4" />
                         </div>
                         <div>
-                          <h4 className="font-bold text-base text-white">Air Quality Index (AQI)</h4>
-                          <p className="text-xs text-muted-foreground">Calibrated Multi-Gas Calculation (MQ-135 + MQ-7)</p>
+                          <h4 className="font-semibold text-sm text-white">Air Quality Index (AQI)</h4>
+                          <p className="text-[11px] text-muted-foreground">Calibrated Multi-Gas (MQ-135 + MQ-7)</p>
                         </div>
                       </div>
                       <span className={`px-3 py-1 rounded-full text-xs font-bold border ${aqiInfo.bg} ${aqiInfo.color}`}>
@@ -480,12 +480,12 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                       </span>
                     </div>
 
-                    <div className="flex items-end justify-between my-4 gap-6">
+                    <div className="flex items-end justify-between my-2 gap-4">
                       <div>
-                        <span className="text-6xl sm:text-7xl font-black text-white tracking-tight">
+                        <span className="text-5xl sm:text-6xl font-black text-white tracking-tight">
                           {sensors.aqi}
                         </span>
-                        <span className="text-sm text-neutral-400 ml-2 font-medium">/ 500 AQI</span>
+                        <span className="text-xs text-neutral-400 ml-1.5 font-medium">/ 500 AQI</span>
                       </div>
                       <div className="text-right">
                         <span className="text-xs font-semibold text-neutral-400 block mb-1">Health Advisory</span>
@@ -502,7 +502,7 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                     </div>
 
                     {/* Dynamic AQI Spectrum Bar */}
-                    <div className="space-y-1.5 mt-2">
+                    <div className="space-y-1 mt-1">
                       <div className="h-3 w-full bg-neutral-800 rounded-full overflow-hidden p-0.5 flex gap-1">
                         <div className="h-full bg-emerald-500 rounded-l-full" style={{ width: "15%" }} title="Good (0-50)" />
                         <div className="h-full bg-amber-500" style={{ width: "20%" }} title="Moderate (51-100)" />
@@ -522,15 +522,15 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                   </div>
 
                   {/* Noise Decibel Meter + Live Oscilloscope (6 Cols) */}
-                  <div className="lg:col-span-6 bg-neutral-900/60 border border-white/10 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+                  <div className="lg:col-span-6 bg-neutral-900/60 border border-white/10 rounded-xl p-4 flex flex-col justify-between relative overflow-hidden">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2.5">
-                        <div className="p-2 rounded-xl bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          <Volume2 className="w-5 h-5" />
+                        <div className="p-1.5 rounded-lg bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          <Volume2 className="w-4 h-4" />
                         </div>
                         <div>
-                          <h4 className="font-bold text-base text-white">Acoustic Noise Sensor (KY-037)</h4>
-                          <p className="text-xs text-muted-foreground">Sound Pressure Level & Real-Time Waveform</p>
+                          <h4 className="font-semibold text-sm text-white">Acoustic Noise Sensor (KY-037)</h4>
+                          <p className="text-[11px] text-muted-foreground">Sound Pressure Level & Real-Time Waveform</p>
                         </div>
                       </div>
                       <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${noiseInfo.color} bg-white/5 border border-white/10`}>
@@ -539,7 +539,7 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                     </div>
 
                     {/* Live Oscilloscope Waveform Canvas */}
-                    <div className="my-2 h-24 w-full bg-neutral-950/80 rounded-xl border border-white/5 relative overflow-hidden flex items-center justify-center">
+                    <div className="my-1.5 h-16 w-full bg-neutral-950/80 rounded-lg border border-white/5 relative overflow-hidden flex items-center justify-center">
                       <canvas ref={canvasRef} width={450} height={96} className="w-full h-full block" />
                       <div className="absolute top-2 left-2 text-[10px] font-mono text-neutral-400 flex items-center gap-1.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping" />
@@ -560,78 +560,78 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                 </div>
 
                 {/* Sensor Telemetry Grid (6 Detailed Sub-Metrics) */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
                   {/* CO2 */}
-                  <div className="p-4 rounded-xl bg-neutral-900/40 border border-white/10 flex flex-col justify-between">
-                    <span className="text-[11px] font-semibold text-neutral-400">Carbon Dioxide (CO₂)</span>
-                    <div className="my-2">
-                      <span className="text-2xl font-bold text-white">{sensors.co2}</span>
-                      <span className="text-xs text-neutral-400 ml-1">ppm</span>
+                  <div className="p-3 rounded-lg bg-neutral-900/40 border border-white/10 flex flex-col justify-between">
+                    <span className="text-[10px] font-semibold text-neutral-400">CO₂</span>
+                    <div className="my-1">
+                      <span className="text-xl font-bold text-white">{sensors.co2}</span>
+                      <span className="text-[11px] text-neutral-400 ml-1">ppm</span>
                     </div>
                     <span className="text-[10px] text-neutral-500 font-mono">Sensor: MQ-135</span>
                   </div>
 
                   {/* Carbon Monoxide */}
-                  <div className="p-4 rounded-xl bg-neutral-900/40 border border-white/10 flex flex-col justify-between">
-                    <span className="text-[11px] font-semibold text-neutral-400">Carbon Monoxide (CO)</span>
-                    <div className="my-2">
-                      <span className={`text-2xl font-bold ${sensors.co > 9 ? "text-red-400" : "text-white"}`}>
+                  <div className="p-3 rounded-lg bg-neutral-900/40 border border-white/10 flex flex-col justify-between">
+                    <span className="text-[10px] font-semibold text-neutral-400">CO</span>
+                    <div className="my-1">
+                      <span className={`text-xl font-bold ${sensors.co > 9 ? "text-red-400" : "text-white"}`}>
                         {sensors.co}
                       </span>
-                      <span className="text-xs text-neutral-400 ml-1">ppm</span>
+                      <span className="text-[11px] text-neutral-400 ml-1">ppm</span>
                     </div>
                     <span className="text-[10px] text-neutral-500 font-mono">Sensor: MQ-7</span>
                   </div>
 
                   {/* PM2.5 Fine Dust */}
-                  <div className="p-4 rounded-xl bg-neutral-900/40 border border-white/10 flex flex-col justify-between">
-                    <span className="text-[11px] font-semibold text-neutral-400">Particulate (PM2.5)</span>
-                    <div className="my-2">
-                      <span className="text-2xl font-bold text-white">{sensors.pm25}</span>
-                      <span className="text-xs text-neutral-400 ml-1">µg/m³</span>
+                  <div className="p-3 rounded-lg bg-neutral-900/40 border border-white/10 flex flex-col justify-between">
+                    <span className="text-[10px] font-semibold text-neutral-400">PM2.5</span>
+                    <div className="my-1">
+                      <span className="text-xl font-bold text-white">{sensors.pm25}</span>
+                      <span className="text-[11px] text-neutral-400 ml-1">µg/m³</span>
                     </div>
                     <span className="text-[10px] text-neutral-500 font-mono">Laser Dust Module</span>
                   </div>
 
                   {/* NH3 Ammonia */}
-                  <div className="p-4 rounded-xl bg-neutral-900/40 border border-white/10 flex flex-col justify-between">
-                    <span className="text-[11px] font-semibold text-neutral-400">Ammonia / Toxic (NH₃)</span>
-                    <div className="my-2">
-                      <span className="text-2xl font-bold text-white">{sensors.nh3}</span>
-                      <span className="text-xs text-neutral-400 ml-1">ppm</span>
+                  <div className="p-3 rounded-lg bg-neutral-900/40 border border-white/10 flex flex-col justify-between">
+                    <span className="text-[10px] font-semibold text-neutral-400">NH₃</span>
+                    <div className="my-1">
+                      <span className="text-xl font-bold text-white">{sensors.nh3}</span>
+                      <span className="text-[11px] text-neutral-400 ml-1">ppm</span>
                     </div>
                     <span className="text-[10px] text-neutral-500 font-mono">Sensor: MQ-135</span>
                   </div>
 
                   {/* Temperature */}
-                  <div className="p-4 rounded-xl bg-neutral-900/40 border border-white/10 flex flex-col justify-between">
-                    <span className="text-[11px] font-semibold text-neutral-400 flex items-center gap-1">
-                      <Thermometer className="w-3.5 h-3.5 text-amber-400" /> Temperature
+                  <div className="p-3 rounded-lg bg-neutral-900/40 border border-white/10 flex flex-col justify-between">
+                    <span className="text-[10px] font-semibold text-neutral-400 flex items-center gap-1">
+                      <Thermometer className="w-3 h-3 text-amber-400" /> Temp
                     </span>
-                    <div className="my-2">
-                      <span className="text-2xl font-bold text-white">{sensors.temperature}</span>
-                      <span className="text-xs text-neutral-400 ml-1">°C</span>
+                    <div className="my-1">
+                      <span className="text-xl font-bold text-white">{sensors.temperature}</span>
+                      <span className="text-[11px] text-neutral-400 ml-1">°C</span>
                     </div>
                     <span className="text-[10px] text-neutral-500 font-mono">DHT11 Sensor</span>
                   </div>
 
                   {/* Humidity */}
-                  <div className="p-4 rounded-xl bg-neutral-900/40 border border-white/10 flex flex-col justify-between">
-                    <span className="text-[11px] font-semibold text-neutral-400 flex items-center gap-1">
-                      <Droplets className="w-3.5 h-3.5 text-blue-400" /> Humidity
+                  <div className="p-3 rounded-lg bg-neutral-900/40 border border-white/10 flex flex-col justify-between">
+                    <span className="text-[10px] font-semibold text-neutral-400 flex items-center gap-1">
+                      <Droplets className="w-3 h-3 text-blue-400" /> Humidity
                     </span>
-                    <div className="my-2">
-                      <span className="text-2xl font-bold text-white">{sensors.humidity}</span>
-                      <span className="text-xs text-neutral-400 ml-1">% RH</span>
+                    <div className="my-1">
+                      <span className="text-xl font-bold text-white">{sensors.humidity}</span>
+                      <span className="text-[11px] text-neutral-400 ml-1">% RH</span>
                     </div>
                     <span className="text-[10px] text-neutral-500 font-mono">DHT11 Sensor</span>
                   </div>
                 </div>
 
                 {/* Simulated Physical Hardware Rig: 16x2 LCD + LEDs + Relay */}
-                <div className="p-5 rounded-2xl bg-neutral-900/80 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="p-3 rounded-xl bg-neutral-900/80 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-3">
                   {/* 16x2 LCD Display Emulator */}
-                  <div className="w-full md:w-1/2 p-4 rounded-xl bg-emerald-950/80 border-2 border-emerald-500/40 font-mono shadow-inner">
+                  <div className="w-full md:w-1/2 p-3 rounded-lg bg-emerald-950/80 border-2 border-emerald-500/40 font-mono shadow-inner">
                     <div className="flex items-center justify-between text-[10px] text-emerald-400/70 border-b border-emerald-500/20 pb-1 mb-1">
                       <span>HD44780 16x2 LCD (I2C 0x27)</span>
                       <span>BACKLIGHT: ON</span>
@@ -645,8 +645,8 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                   </div>
 
                   {/* Actuators & Relay Status Indicators */}
-                  <div className="w-full md:w-1/2 grid grid-cols-3 gap-3 text-center">
-                    <div className="p-3 rounded-xl bg-neutral-950 border border-white/5 flex flex-col items-center justify-center">
+                  <div className="w-full md:w-1/2 grid grid-cols-3 gap-2 text-center">
+                    <div className="p-2 rounded-lg bg-neutral-950 border border-white/5 flex flex-col items-center justify-center">
                       <span className="text-[10px] text-neutral-400 mb-1">Piezo Buzzer</span>
                       <div className={`w-4 h-4 rounded-full mb-1.5 ${isAlarmTriggered ? "bg-red-500 animate-ping" : "bg-neutral-700"}`} />
                       <span className={`text-xs font-bold ${isAlarmTriggered ? "text-red-400" : "text-neutral-500"}`}>
@@ -654,7 +654,7 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                       </span>
                     </div>
 
-                    <div className="p-3 rounded-xl bg-neutral-950 border border-white/5 flex flex-col items-center justify-center">
+                    <div className="p-2 rounded-lg bg-neutral-950 border border-white/5 flex flex-col items-center justify-center">
                       <span className="text-[10px] text-neutral-400 mb-1">RGB LED Pin 9</span>
                       <div
                         className={`w-4 h-4 rounded-full mb-1.5 shadow-md ${
@@ -670,7 +670,7 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                       </span>
                     </div>
 
-                    <div className="p-3 rounded-xl bg-neutral-950 border border-white/5 flex flex-col items-center justify-center">
+                    <div className="p-2 rounded-lg bg-neutral-950 border border-white/5 flex flex-col items-center justify-center">
                       <span className="text-[10px] text-neutral-400 mb-1">ESP8266 Cloud</span>
                       <div className="w-4 h-4 rounded-full bg-blue-500 animate-pulse mb-1.5 shadow-md shadow-blue-500/50" />
                       <span className="text-xs font-bold text-blue-400">MQTT TX 1s</span>
@@ -682,17 +682,17 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
 
             {/* TAB 2: INTERACTIVE HARDWARE SLIDERS */}
             {activeTab === "controls" && (
-              <div className="space-y-6 max-w-4xl mx-auto">
-                <div className="p-4 rounded-2xl bg-neutral-900/60 border border-white/10">
+              <div className="space-y-4 max-w-4xl mx-auto">
+                <div className="p-3 rounded-xl bg-neutral-900/60 border border-white/10">
                   <h4 className="font-bold text-base text-white mb-1">Manual Sensor Calibration & Stress Testing</h4>
                   <p className="text-xs text-neutral-400">
                     Adjust the physical simulation parameters below to test alarm triggers, buzzer activation, and sensor logic in real time.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* Air Quality Slider */}
-                  <div className="p-5 rounded-2xl bg-neutral-900/40 border border-white/10 space-y-3">
+                  <div className="p-4 rounded-xl bg-neutral-900/40 border border-white/10 space-y-2">
                     <div className="flex justify-between items-center">
                       <label className="text-sm font-bold text-white flex items-center gap-2">
                         <Wind className="w-4 h-4 text-primary" /> Air Quality Index (AQI)
@@ -724,7 +724,7 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                   </div>
 
                   {/* Noise Decibels Slider */}
-                  <div className="p-5 rounded-2xl bg-neutral-900/40 border border-white/10 space-y-3">
+                  <div className="p-4 rounded-xl bg-neutral-900/40 border border-white/10 space-y-2">
                     <div className="flex justify-between items-center">
                       <label className="text-sm font-bold text-white flex items-center gap-2">
                         <Volume2 className="w-4 h-4 text-purple-400" /> Acoustic Decibel Level (dB)
@@ -750,7 +750,7 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                   </div>
 
                   {/* CO2 PPM */}
-                  <div className="p-5 rounded-2xl bg-neutral-900/40 border border-white/10 space-y-3">
+                  <div className="p-4 rounded-xl bg-neutral-900/40 border border-white/10 space-y-2">
                     <div className="flex justify-between items-center">
                       <label className="text-sm font-bold text-white">Carbon Dioxide (CO₂)</label>
                       <span className="text-base font-bold text-white font-mono">{sensors.co2} ppm</span>
@@ -766,7 +766,7 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                   </div>
 
                   {/* Carbon Monoxide */}
-                  <div className="p-5 rounded-2xl bg-neutral-900/40 border border-white/10 space-y-3">
+                  <div className="p-4 rounded-xl bg-neutral-900/40 border border-white/10 space-y-2">
                     <div className="flex justify-between items-center">
                       <label className="text-sm font-bold text-white">Carbon Monoxide (CO)</label>
                       <span className="text-base font-bold text-white font-mono">{sensors.co} ppm</span>
@@ -784,7 +784,7 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                 </div>
 
                 {/* Threshold Setting Box */}
-                <div className="p-5 rounded-2xl bg-neutral-900/80 border border-primary/30 flex flex-wrap items-center justify-between gap-4">
+                <div className="p-4 rounded-xl bg-neutral-900/80 border border-primary/30 flex flex-wrap items-center justify-between gap-3">
                   <div>
                     <h5 className="font-bold text-white text-sm">Alarm Threshold Triggers</h5>
                     <p className="text-xs text-neutral-400">Configure cutoff values where the buzzer & LEDs sound alarm.</p>
@@ -841,7 +841,7 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                   </div>
                 </div>
 
-                <div className="h-80 bg-black/90 border border-white/15 rounded-2xl p-4 font-mono text-xs text-emerald-400 overflow-y-auto space-y-1 shadow-inner select-text">
+                <div className="h-64 bg-black/90 border border-white/15 rounded-xl p-3 font-mono text-xs text-emerald-400 overflow-y-auto space-y-0.5 shadow-inner select-text">
                   <p className="text-neutral-500">// -- Embedded C++ Serial Stream Initialized --</p>
                   <p className="text-neutral-500">// Calibration baseline R0 = 10.2k Ohm, Vcc = 5.0V</p>
                   {logs.length === 0 ? (
@@ -876,7 +876,7 @@ export const IoTPollutionDemoModal: React.FC<IoTPollutionDemoModalProps> = ({
                   <span className="text-xs text-neutral-400 font-mono">AVR-GCC • Arduino IDE 2.0</span>
                 </div>
 
-                <pre className="p-4 bg-black/90 border border-white/15 rounded-2xl font-mono text-xs text-neutral-200 overflow-x-auto leading-relaxed shadow-inner">
+                <pre className="p-3 bg-black/90 border border-white/15 rounded-xl font-mono text-xs text-neutral-200 overflow-x-auto leading-relaxed shadow-inner">
 {`#include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 #include <DHT.h>
@@ -951,7 +951,7 @@ void loop() {
           </div>
 
           {/* Modal Footer Bar */}
-          <div className="px-6 py-3 border-t border-white/10 bg-neutral-900/60 flex items-center justify-between text-xs text-neutral-400">
+          <div className="px-4 py-2 border-t border-white/10 bg-neutral-900/60 flex items-center justify-between text-xs text-neutral-400">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
               <span>Project by <strong>Guru</strong> (IoT & Embedded Systems)</span>
